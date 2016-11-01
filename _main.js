@@ -1,4 +1,5 @@
 $('body').append("	<div id='container'></div>");
+	var objects = []
 if ($("#container").children().length == 0) {
 	$("#container").append("<div class='item'></div>")
 }
@@ -27,4 +28,22 @@ function PreProcess(id) {
 			op = x[1].value
 
 	connect(name, op);
+}
+
+
+function get() {
+	$.ajax({
+		url: 'php/getJson.php',
+		type: "POST"
+	})
+	.done(function(result) {
+		objects.push = result
+		console.log("success");
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
 }
