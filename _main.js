@@ -2,6 +2,7 @@ $('body').append("	<div id='container'></div>");
 if ($("#container").children().length == 0) {
 	$("#container").append("<div class='item'></div>")
 }
+get()
 
 function connect(n1, p1) {
 	$.ajax({
@@ -9,13 +10,16 @@ function connect(n1, p1) {
 		type: "POST",
 		data: {name: n1, op: p1}
 	})
-	.done(function() {
-		get()
+	.done(function(result) {
+		if (result == "done" && z != 300) {
+			setTimeout(generate(), z)
+		} else {
+			get()
+		}
 		console.log("success");
 	})
 	.fail(function(result) {
-		console.log("error");
-		console.log(result);
+		// alert(result)
 	})
 	.always(function() {
 		console.log("complete");
@@ -58,4 +62,22 @@ function show() {
 	for (var i = 0; i < stuff.length; i++) {
 		$("#con").children("table").append("<tr><td>"+stuff[i][0]+"</td><td>"+stuff[i][1]+"</td></tr>")
 	}
+}
+
+var z = 0
+
+function generate() {
+		$("#form").children("#name").val(newString())
+		$("#form").children("#op").val(newString())
+		$("#form").children("#button").click()
+		z++
+}
+
+function newString() {
+	var pos = "qwertyuiopåøælkjhgfdsazxcvbnm1234567890",
+			string = ""
+	for (var i = 0; i < Math.floor(Math.random() * 60); i++) {
+		string += pos.charAt(Math.floor(Math.random() * pos.length))
+	}
+	return string
 }
