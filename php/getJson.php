@@ -1,5 +1,5 @@
 <?php
-	$file = json_decode(file_get_contents("json/stuff.json"), true);
+	$file = json_decode(file_get_contents("json/users.json"), true);
 	echo "<script>";
 	echo "var stuff = [";
 	$n = "name";

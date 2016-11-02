@@ -8,14 +8,10 @@ function connect(n1, p1) {
 	$.ajax({
 		url: 'php/_gen.php',
 		type: "POST",
-		data: {name: n1, op: p1}
+		data: {name: n1, pass: p1}
 	})
 	.done(function(result) {
-		if (result == "done" && z != 300) {
-			setTimeout(generate(), z)
-		} else {
-			get()
-		}
+		get()
 		console.log("success");
 	})
 	.fail(function(result) {
@@ -63,20 +59,28 @@ function show() {
 	}
 }
 
-var z = 0
 
-function generate() {
-		$("#form").children("#name").val(newString())
-		$("#form").children("#op").val(newString())
-		$("#form").children("#button").click()
-		z++
-}
+function test() {
+	var temp = ""
+		$.ajax({
+			url: 'php/loadTemp.php',
+			type: 'GET'
+		})
+		.done(function(result) {
+			var length = $.get("php/getLength.php")
+			length = length.responseText
+			temp += result
+			temp = temp.replace(/@name@/g, "name").replace(/@password@/g, "password").replace(/@invID@/g, length)
+			console.log(length);
 
-function newString() {
-	var pos = "qwertyuiopåøælkjhgfdsazxcvbnm1234567890",
-			string = ""
-	for (var i = 0; i < Math.floor(Math.random() * 60); i++) {
-		string += pos.charAt(Math.floor(Math.random() * pos.length))
-	}
-	return string
+			console.log(temp);
+			console.log("success");
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+
 }

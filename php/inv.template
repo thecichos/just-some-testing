@@ -1,6 +1,6 @@
 [{
-        "owner": "#name#"
-    }, {
+      "owner": "#name#",
+      "invID": "#invID#",
         "items": {
             "item": {
                 "itemID": "#ID#",
