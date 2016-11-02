@@ -1,0 +1,22 @@
+[{
+        "owner": "#name#"
+    }, {
+        "items": {
+            "item": {
+                "itemID": "#ID#",
+                "name": "#itemName#",
+                "type": "#type#",
+                "material": "#material#",
+                "condition": "#condition#"
+            },
+            "item": {
+                "itemID": "#ID#",
+                "name": "#itemName#",
+                "type": "#type#",
+                "material": "#material#",
+                "condition": "#condition#"
+            }
+        }
+    }
+
+]
