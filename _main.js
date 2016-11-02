@@ -35,7 +35,6 @@ function PreProcess(id) {
 	connect(name, op);
 }
 
-
 function get() {
 	$('#con').empty()
 	$.ajax({
