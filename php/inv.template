@@ -1,22 +1,14 @@
 [{
-      "owner": "#name#",
-      "invID": "#invID#",
+      "owner": "@name@",
+      "invID": "@invID@",
         "items": {
             "item": {
-                "itemID": "#ID#",
-                "name": "#itemName#",
-                "type": "#type#",
-                "material": "#material#",
-                "condition": "#condition#"
-            },
-            "item": {
-                "itemID": "#ID#",
-                "name": "#itemName#",
-                "type": "#type#",
-                "material": "#material#",
-                "condition": "#condition#"
+                "itemID": "@ID@",
+                "name": "@itemName@",
+                "type": "@type@",
+                "material": "@material@",
+                "condition": "@condition@"
             }
         }
     }
-
 ]

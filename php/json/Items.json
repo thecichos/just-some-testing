@@ -1,1 +1,13 @@
-[]
+[{
+      "owner": "Name",
+      "invID": "0",
+        "items": {
+            "item": {
+                "itemID": "1",
+                "name": "helmet",
+                "type": "helmet",
+                "material": "wood",
+                "condition": "good"
+            }
+        }
+    }]

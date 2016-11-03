@@ -60,18 +60,19 @@ function show() {
 }
 
 
-function test() {
+function test(x) {
 	var temp = ""
 		$.ajax({
 			url: 'php/loadTemp.php',
-			type: 'GET'
+			type: 'POST',
+			data: {temp: x}
 		})
 		.done(function(result) {
 			var length = $.get("php/getLength.php")
 			length = length.responseText
+			console.log(length);
 			temp += result
 			temp = temp.replace(/@name@/g, "name").replace(/@password@/g, "password").replace(/@invID@/g, length)
-			console.log(length);
 
 			console.log(temp);
 			console.log("success");

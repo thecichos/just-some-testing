@@ -2,8 +2,8 @@
 	$file = json_decode(file_get_contents("json/users.json"), true);
 	echo "<script>";
 	echo "var stuff = [";
-	$n = "name";
-	$o = "op";
+	$n = "username";
+	$o = "password";
 	$t = count($file);
 	for ($i=0; $i < count($file); $i++) {
 		echo "[";
